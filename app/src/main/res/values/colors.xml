@@ -9,5 +9,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="colorPrimary">#FA8C00</color>
     <color name="colorPrimaryDark">#FA8C00</color>
+    <color name="colorBackground">#F5F5F5</color>
+    <color name="colorText">#212121</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="divider_color">#E0E0E0</color>
+
 
 </resources>
