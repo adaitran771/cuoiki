@@ -49,8 +49,13 @@ class login : AppCompatActivity() {
             call.enqueue(object : Callback<serverResponse> {
                 override fun onResponse(call: Call<serverResponse>, response: Response<serverResponse>) {
                     if (response.isSuccessful) {
+                        Toast.makeText(this@login, "respone: ${response.body()}", Toast.LENGTH_LONG).show()
                         val jwt = response.body()?.response?.data?.jwt
                         // Lưu token và điều hướng người dùng
+                        val sharedPreferences = getSharedPreferences("MyAppPrefs", MODE_PRIVATE)
+                        val editor = sharedPreferences.edit()
+                        editor.putString("JWT_TOKEN", jwt)
+                        editor.apply()
                         if(jwt != null) {
                             Toast.makeText(
                                 this@login,
