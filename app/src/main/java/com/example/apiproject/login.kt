@@ -6,7 +6,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import com.example.apiproject.API.serverResponse
-import com.example.apiproject.API.apiService
+import com.example.apiproject.API.apiServiceUser
 import com.example.apiproject.user.User
 import com.google.android.material.textfield.TextInputEditText
 import retrofit2.Callback
@@ -44,7 +44,7 @@ class login : AppCompatActivity() {
                 .baseUrl("http://192.168.1.5/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-            val Api = retrofit.create(apiService::class.java)
+            val Api = retrofit.create(apiServiceUser::class.java)
             val call = Api.login(User(username.text.toString(), password.text.toString()));
             call.enqueue(object : Callback<serverResponse> {
                 override fun onResponse(call: Call<serverResponse>, response: Response<serverResponse>) {

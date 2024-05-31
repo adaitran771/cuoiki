@@ -18,7 +18,7 @@ data class JwtData(
     val message: String,
 )
 
-interface apiService {
+interface apiServiceUser {
     @Headers("Accept: application/json")
 
     @POST("api/users/login")

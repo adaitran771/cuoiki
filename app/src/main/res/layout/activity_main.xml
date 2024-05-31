@@ -15,15 +15,12 @@
         android:background="#FFF"
         android:elevation="4dp">
 
-        <EditText
-            android:id="@+id/search_edit_text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="300dp"
             android:layout_weight="1"
-            android:hint="Search"
-            android:padding="10dp"
-
-            />
+            android:layout_height="wrap_content"
+            android:queryHint="Search products..." />
 
         <ImageView
             android:id="@+id/cart_icon"
@@ -31,16 +28,17 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:src="@drawable/ic_shoping"
-            android:contentDescription="shoping Icon"/>
+            android:contentDescription="Shopping Icon"/>
     </LinearLayout>
 
-    <!-- ListView để hiển thị danh sách sản phẩm -->
-    <ListView
-        android:id="@+id/product_list_view"
+    <!-- RecycleView để hiển thị danh sách sản phẩm -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_below="@id/search_bar"
-        android:layout_above="@id/navigation_bar"/>
+        android:layout_above="@id/navigation_bar"
+        android:padding="10dp"/>
 
     <!-- Thanh navigation -->
     <LinearLayout
@@ -68,7 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:src="@drawable/ic_shoping"
-            android:contentDescription="shoping Icon"/>
+            android:contentDescription="Shopping Icon"/>
 
         <ImageView
             android:id="@+id/nav_live"
@@ -76,9 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:src="@drawable/ic_person"
-            android:contentDescription="person Icon"/>
-
-
+            android:contentDescription="Person Icon"/>
     </LinearLayout>
 
 </RelativeLayout>
