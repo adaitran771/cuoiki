@@ -21,6 +21,6 @@ class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         priceTextView.text = "Price: ${item.price}"
         viewTextView.text = "Views: ${item.view}"
         val url = "http://192.168.1.5/api/images/${item.img}"
-        Picasso.get().load(url).into(imageView)
+        Picasso.get().load(url).fit().centerInside().into(imageView)
     }
 }

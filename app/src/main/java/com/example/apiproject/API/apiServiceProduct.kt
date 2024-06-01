@@ -37,4 +37,7 @@ interface apiServiceProduct {
 
     @GET("api/products")
     fun paging(@Query("page") page: Int) : Call<ProductResponse>
+    @Headers("Content-Type: application/json")
+    @GET("api/products")
+    fun search(@Query("productName") productName: String) : Call<ProductResponse>
 }
