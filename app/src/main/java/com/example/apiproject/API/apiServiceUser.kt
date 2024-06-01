@@ -16,6 +16,7 @@ data class ResponseData(
 data class JwtData(
     val jwt: String,
     val message: String,
+    val user: User
 )
 
 interface apiServiceUser {

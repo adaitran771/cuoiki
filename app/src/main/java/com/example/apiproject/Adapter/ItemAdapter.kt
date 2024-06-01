@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.ProgressBar
 import androidx.recyclerview.widget.RecyclerView
 import com.example.apiproject.API.Item
-import com.example.apiproject.ItemViewHolder
 import com.example.apiproject.R
 
 class ItemAdapter(private var items: MutableList<Any?>, private val context : Context)

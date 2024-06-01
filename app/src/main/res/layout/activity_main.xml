@@ -37,46 +37,16 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_below="@id/search_bar"
-        android:layout_above="@id/navigation_bar"
+        android:layout_above="@id/navigation_container"
 
         android:background="#C8C7C7"
         />
 
     <!-- Thanh navigation -->
-    <LinearLayout
-        android:id="@+id/navigation_bar"
+    <FrameLayout
+        android:id="@+id/navigation_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:background="#FFF"
-        android:elevation="8dp"
-        android:padding="10dp">
-
-        <!-- Các nút trong thanh navigation -->
-        <ImageView
-            android:id="@+id/nav_home"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/baseline_home_24"
-            android:contentDescription="Home Icon"/>
-
-        <ImageView
-            android:id="@+id/nav_mall"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/ic_shoping"
-            android:contentDescription="Shopping Icon"/>
-
-        <ImageView
-            android:id="@+id/nav_live"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/ic_person"
-            android:contentDescription="Person Icon"/>
-    </LinearLayout>
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>

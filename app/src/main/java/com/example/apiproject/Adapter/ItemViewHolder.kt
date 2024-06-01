@@ -1,13 +1,14 @@
-package com.example.apiproject
+package com.example.apiproject.Adapter
 
 import android.content.Context
 import android.content.Intent
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.apiproject.API.Item
+import com.example.apiproject.R
+import com.example.apiproject.detail_product
 import com.squareup.picasso.Picasso
 
 

@@ -2,6 +2,9 @@ package com.example.apiproject
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -28,6 +31,9 @@ class detail_product : AppCompatActivity() {
 
 
 
+
+
+
         // Lấy dữ liệu từ Intent
         val itemId = intent.getIntExtra("item", -1)
         val itemView = intent.getIntExtra("view", 0)
@@ -50,8 +56,16 @@ class detail_product : AppCompatActivity() {
 
         // Tải lại ảnh
         itemImg?.let {
-            Picasso.get().load("http://192.168.1.5/api/images/$it").fit().centerInside().into(productImg)
+            Picasso.get().load("http://127.0.0.1/api/images/$it").fit().centerInside().into(productImg)
         }
+        val navigationContainer: FrameLayout = findViewById(R.id.navigation_container)
 
+        // Inflate layout con và thêm vào container
+        val inflater: LayoutInflater = LayoutInflater.from(this)
+        val navigationBar: View = inflater.inflate(R.layout.navigation_bar, navigationContainer, false)
+
+        val NavigationHandler : NavigationHandler = NavigationHandler(this,navigationBar, navigationContainer)
+        NavigationHandler.insertNavIntoParent()
+        NavigationHandler.setClickNav()
     }
 }

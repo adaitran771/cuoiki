@@ -1,5 +1,7 @@
 package com.example.apiproject
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -62,6 +64,9 @@ class login : AppCompatActivity() {
                                 "Đăng nhập thành công: $jwt",
                                 Toast.LENGTH_SHORT
                             ).show()
+
+                            val intent = Intent(this@login, MainActivity::class.java)
+                            startActivity(intent)
                         } else {
                             Toast.makeText(this@login, "Đăng nhập thất bại: Không tìm thấy JWT", Toast.LENGTH_SHORT).show()
                         }

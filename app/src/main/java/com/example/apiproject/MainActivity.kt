@@ -2,6 +2,9 @@ package com.example.apiproject
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 
@@ -32,6 +35,22 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+        // Ánh xạ container trong layout cha
+        val navigationContainer: FrameLayout = findViewById(R.id.navigation_container)
+
+        // Inflate layout con và thêm vào container
+        val inflater: LayoutInflater = LayoutInflater.from(this)
+        val navigationBar: View = inflater.inflate(R.layout.navigation_bar, navigationContainer, false)
+
+        // Thêm layout con vào container
+
+        val NavigationHandler : NavigationHandler
+        = NavigationHandler(this,navigationBar, navigationContainer)
+        NavigationHandler.insertNavIntoParent()
+        NavigationHandler.setClickNav()
+
 
         searchView = findViewById(R.id.searchView)
         recyclerView = findViewById(R.id.recycler_view)
