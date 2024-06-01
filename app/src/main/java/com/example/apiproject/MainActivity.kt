@@ -42,14 +42,14 @@ class MainActivity : AppCompatActivity() {
 
         //api url
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.1.5/")
+            .baseUrl("http://192.168.1.10/")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
         val apiProduct = retrofit.create(apiServiceProduct::class.java)
         var page = 1
         listItem  = mutableListOf()
         //gan vao ryclerview
-        adapter = ItemAdapter(listItem as MutableList<Any?> )
+        adapter = ItemAdapter(listItem as MutableList<Any?>, this )
         recyclerView.adapter = adapter
 //        adapter.updateItems(listItem)
         getDataServerPaging(apiProduct, page) {

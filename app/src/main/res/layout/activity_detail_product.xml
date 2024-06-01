@@ -1,0 +1,268 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".detail_product">
+
+    <!-- ScrollView -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- Nội dung của ScrollView -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#C8C7C7">
+
+            <!-- ImageView -->
+            <ImageView
+                android:id="@+id/productImg"
+                android:layout_width="match_parent"
+                android:layout_height="301dp"
+
+                android:layout_margin="3dp"
+                android:background="@color/white"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp">
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="50dp"
+                    android:background="#DA481A"
+
+                    android:text="Thêm Vào Giỏ Hàng"
+                    android:textColor="@color/colorBackground"
+                    android:layout_marginRight="3dp" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="50dp"
+                    android:background="#DA481A"
+
+                    android:text="Mua Hàng"
+                    android:layout_marginLeft="3dp"
+                    android:textColor="@color/colorBackground"
+                    />
+            </LinearLayout>
+
+
+
+            <!-- Giá -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="3dp"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/priceLable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="price"
+                    android:textColor="#F62525"
+                    android:textSize="20dp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:text="99999"
+                    android:textAlignment="center"
+                    android:textColor="#F62525"
+                    android:textSize="20dp"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <!-- Tên sản phẩm -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="3dp"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/productLable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="name"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/productName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:text="name"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <!-- Size -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="3dp"
+                android:background="@color/white">
+                <TextView
+                    android:id="@+id/productSizeLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Size"
+                    android:textColor="@color/colorPrimary" />
+                <TextView
+                    android:id="@+id/productSize"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:text="29,30,31"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+            <!-- Màu -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="3dp"
+                android:background="@color/white">
+                <TextView
+                    android:id="@+id/productColorLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="color"
+                    android:textColor="@color/colorPrimary" />
+                <TextView
+                    android:id="@+id/productColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:text="xanh dỏ tím vàng"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+            <!-- Trạng thái -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="3dp"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/productStatusLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Status"
+                    android:textColor="#38B83E" />
+                <TextView
+                    android:id="@+id/productStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:text="Còn Hàng"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+            <!-- Mô tả sản phẩm -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="3dp"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/desLable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mo ta san pham"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/des"
+                    android:layout_width="match_parent"
+                    android:layout_height="194dp"
+                    android:text="des.." />
+            </LinearLayout>
+
+            <!-- Bình luận -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="3dp"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/commentLable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Binh Luan"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/commentRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Thanh navigation -->
+    <LinearLayout
+        android:id="@+id/navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#FFF"
+        android:elevation="8dp"
+        android:padding="10dp">
+
+        <!-- Các nút trong thanh navigation -->
+        <ImageView
+            android:id="@+id/nav_home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/baseline_home_24"
+            android:contentDescription="Home Icon"/>
+
+        <ImageView
+            android:id="@+id/nav_mall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_shoping"
+            android:contentDescription="Shopping Icon"/>
+
+        <ImageView
+            android:id="@+id/nav_live"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_person"
+            android:contentDescription="Person Icon"/>
+    </LinearLayout>
+</LinearLayout>

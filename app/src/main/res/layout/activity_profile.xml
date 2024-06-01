@@ -101,8 +101,8 @@
         <!-- Divider between Home and Order History buttons -->
         <Button
             android:id="@+id/index"
-            android:layout_width="118dp"
-            android:layout_height="57dp"
+            android:layout_width="345dp"
+            android:layout_height="59dp"
             android:layout_marginStart="8dp"
             android:background="@android:color/transparent"
             android:padding="12dp"
@@ -139,8 +139,8 @@
 
         <Button
             android:id="@+id/order_history_button"
-            android:layout_width="118dp"
-            android:layout_height="57dp"
+            android:layout_width="346dp"
+            android:layout_height="65dp"
             android:layout_marginStart="12dp"
             android:background="@android:color/transparent"
             android:padding="12dp"
@@ -153,10 +153,11 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/logout_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#F12323"
         android:text="Đăng xuất"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

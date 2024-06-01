@@ -1,5 +1,6 @@
 package com.example.apiproject.Adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +10,8 @@ import com.example.apiproject.API.Item
 import com.example.apiproject.ItemViewHolder
 import com.example.apiproject.R
 
-class ItemAdapter(private var items: MutableList<Any?>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class ItemAdapter(private var items: MutableList<Any?>, private val context : Context)
+    : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val VIEW_TYPE_ITEM = 0
     private val VIEW_TYPE_LOADING = 1
 
@@ -23,7 +25,7 @@ class ItemAdapter(private var items: MutableList<Any?>) : RecyclerView.Adapter<R
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return if (viewType == VIEW_TYPE_ITEM) {
             val view = LayoutInflater.from(parent.context).inflate(R.layout.item_view, parent, false)
-            ItemViewHolder(view)
+            ItemViewHolder(view, context)
         } else {
             val view = LayoutInflater.from(parent.context).inflate(R.layout.loading_item, parent, false)
             LoadingViewHolder(view)
