@@ -23,6 +23,11 @@ class NavigationHandler(private val context : Context,
             val intent : Intent = Intent(context, MainActivity::class.java)
             context.startActivity(intent)
         }
+//        val mallNav = childLayout.findViewById<ImageView>(R.id.nav_mall)
+//        mallNav.setOnLongClickListener {
+//            val intent : Intent = Intent(context,Cart::class.java)
+//            context.startActivity(intent)
+//        }
         val profileNav = childLayout.findViewById<ImageView>(R.id.nav_profile)
         profileNav.setOnClickListener {
             val intent : Intent = Intent(context, profile::class.java)
