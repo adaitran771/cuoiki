@@ -21,18 +21,26 @@ class login : AppCompatActivity() {
     lateinit var username : TextInputEditText
     lateinit var password : TextInputEditText
     lateinit var btnLogin : Button
+    lateinit var createAccount: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        username = findViewById(R.id.et_email)
+        username = findViewById(R.id.username)
         password = findViewById(R.id.et_password)
         btnLogin = findViewById(R.id.button)
+        createAccount = findViewById(R.id.createAccount)
+
         btnLogin.setOnClickListener {
             if (validateField(username, password)) {
                 performLogin()
             }
+        }
+
+        createAccount.setOnClickListener {
+            val intent = Intent(this@login, register::class.java)
+            startActivity(intent)
         }
     }
 
@@ -40,7 +48,7 @@ class login : AppCompatActivity() {
         val user = User(username.text.toString(), password.text.toString())
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.1.62/") // Thay đổi baseUrl nếu cần
+            .baseUrl("http://192.168.130.64/") // Thay đổi baseUrl nếu cần
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         val Api = retrofit.create(apiServiceUser::class.java)

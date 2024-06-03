@@ -22,6 +22,9 @@
             android:name=".detail_product"
             android:exported="false" />
         <activity
+            android:name=".register"
+            android:exported="false"/>
+        <activity
             android:name="com.example.apiproject.login"
             android:exported="true" >
             <intent-filter>

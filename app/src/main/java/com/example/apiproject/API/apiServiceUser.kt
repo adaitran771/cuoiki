@@ -1,5 +1,6 @@
 package com.example.apiproject.API
 import com.example.apiproject.user.User
+import com.example.apiproject.user.UserRegister
 import retrofit2.http.Body
 import retrofit2.Call
 import retrofit2.http.Headers
@@ -19,9 +20,16 @@ data class JwtData(
     val user: User
 )
 
+
+
+
 interface apiServiceUser {
     @Headers("Accept: application/json")
 
     @POST("api/users/login")
     fun login(@Body user: User) : Call<serverResponse>
+    @Headers("Accept: application/json")
+    @POST("api/users/register")
+    fun register(@Body user: UserRegister) : Call<serverResponse>
 }
+
