@@ -56,7 +56,7 @@ class detail_product : AppCompatActivity() {
 
         // Tải lại ảnh
         itemImg?.let {
-            Picasso.get().load("http://127.0.0.1/api/images/$it").fit().centerInside().into(productImg)
+            Picasso.get().load("http://192.168.1.4/api/images/$it").fit().centerInside().into(productImg)
         }
         val navigationContainer: FrameLayout = findViewById(R.id.navigation_container)
 
