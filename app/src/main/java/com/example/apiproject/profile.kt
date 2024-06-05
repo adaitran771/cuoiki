@@ -55,7 +55,7 @@ class profile : AppCompatActivity() {
         }
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.1.62/") // Thay đổi baseUrl nếu cần
+            .baseUrl("http://192.168.100.7/") // Thay đổi baseUrl nếu cần
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         val api = retrofit.create(apiServiceUser::class.java)
@@ -69,7 +69,7 @@ class profile : AppCompatActivity() {
                         val userProfile = responseData.data[0]
                         Log.d("UserProfile", "Name: ${userProfile.name}, Email: ${userProfile.email}, Phone: ${userProfile.phone}, Address: ${userProfile.address}")
                         // Hiển thị thông tin người dùng
-                        nameTextView.text = "Name: ${userProfile.name}"
+                        nameTextView.text = "${userProfile.name}"
                         emailTextView.text = "Email: ${userProfile.email}"
                         phoneTextView.text = "Phone: ${userProfile.phone}"
                         addressTextView.text = "Address: ${userProfile.address}"
