@@ -16,12 +16,13 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.Response
-import com.example.apiproject.API.Utility.isNetworkAvailable
+
 class login : AppCompatActivity() {
-    lateinit var username : TextInputEditText
-    lateinit var password : TextInputEditText
-    lateinit var btnLogin : Button
+    lateinit var username: TextInputEditText
+    lateinit var password: TextInputEditText
+    lateinit var btnLogin: Button
     lateinit var createAccount: TextView
+    lateinit var enteredUsername: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +35,7 @@ class login : AppCompatActivity() {
 
         btnLogin.setOnClickListener {
             if (validateField(username, password)) {
+                enteredUsername = username.text.toString() // Lưu username vào biến
                 performLogin()
             }
         }
@@ -60,13 +62,14 @@ class login : AppCompatActivity() {
                     val sharedPreferences = getSharedPreferences("MyAppPrefs", MODE_PRIVATE)
                     val editor = sharedPreferences.edit()
                     editor.putString("JWT_TOKEN", jwt)
+                    editor.putString("USERNAME", enteredUsername) // Lưu username vào SharedPreferences
                     editor.apply()
                     if (jwt != null) {
                         Toast.makeText(this@login, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show()
                         val intent = Intent(this@login, MainActivity::class.java)
                         startActivity(intent)
                     } else {
-                        Toast.makeText(this@login, "Đăng nhập thất bại: Không tìm thấy JWT", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@login, "Vui lòng nhập đúng tài khoản và mật khẩu!!", Toast.LENGTH_SHORT).show()
                     }
                 } else {
                     Toast.makeText(this@login, "Đăng nhập thất bại", Toast.LENGTH_SHORT).show()
