@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
 import com.example.apiproject.API.serverResponse
 import com.example.apiproject.API.apiServiceUser
 import com.example.apiproject.user.UserRegister
@@ -27,6 +28,7 @@ class register : AppCompatActivity() {
     private lateinit var address: TextInputEditText
     private lateinit var btnRegister: Button
     private lateinit var loginLink: TextView
+    private lateinit var recyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +44,7 @@ class register : AppCompatActivity() {
         address = findViewById(R.id.address)
         btnRegister = findViewById(R.id.register)
         loginLink = findViewById(R.id.loginLink)
+        recyclerView = findViewById(R.id.recyclerView)
 
         btnRegister.setOnClickListener {
             if (validateFields()) {
@@ -67,7 +70,7 @@ class register : AppCompatActivity() {
         )
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.130.64/") // Change the baseUrl if needed
+            .baseUrl("http://192.168.1.62/") // Change the baseUrl if needed
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         val api = retrofit.create(apiServiceUser::class.java)
