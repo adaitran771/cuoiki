@@ -22,7 +22,7 @@ class ItemViewHolder(itemView: View,private val context: Context) : RecyclerView
         nameTextView.text = item.name
         priceTextView.text = "Price: ${item.price}"
         viewTextView.text = "Views: ${item.view}"
-        val url = "http://192.168.130.64/api/images/${item.img}"
+        val url = "http://192.168.1.62/api/images/${item.img}"
         Picasso.get().load(url).fit().centerInside().into(imageView)
         clickOnItem(item)
     }
