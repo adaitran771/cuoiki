@@ -1,6 +1,7 @@
 package com.example.apiproject.API
 
 import com.example.apiproject.user.User
+import com.example.apiproject.user.UserEdit
 import com.example.apiproject.user.UserRegister
 import retrofit2.Call
 import retrofit2.http.*
@@ -55,4 +56,8 @@ interface apiServiceUser {
     @Headers("Accept: application/json")
     @GET("api/users")
     fun getUserByUsername(@Query("username") username: String): Call<userResponse>
+
+    @Headers("Accept: application/json")
+    @POST("api/users/update")
+    fun update(@Body user: UserEdit): Call<serverResponse>
 }

@@ -50,7 +50,7 @@ class login : AppCompatActivity() {
         val user = User(username.text.toString(), password.text.toString())
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.100.7/") // Thay đổi baseUrl nếu cần
+            .baseUrl("http://192.168.1.62/") // Thay đổi baseUrl nếu cần
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         val Api = retrofit.create(apiServiceUser::class.java)

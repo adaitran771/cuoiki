@@ -47,7 +47,7 @@ class detail_product : AppCompatActivity() {
 
         // Tải và hiển thị hình ảnh sản phẩm
         itemImg?.let {
-            Picasso.get().load("http://192.168.100.7/api/images/$it").fit().centerInside().into(productImg)
+            Picasso.get().load("http://192.168.1.62/api/images/$it").fit().centerInside().into(productImg)
         }
 
         // Ánh xạ container trong layout cha

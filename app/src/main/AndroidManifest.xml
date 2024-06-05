@@ -19,6 +19,9 @@
             android:name=".profile"
             android:exported="false" />
         <activity
+            android:name=".EditProfile"
+            android:exported="false" />
+        <activity
             android:name=".detail_product"
             android:exported="false" />
         <activity

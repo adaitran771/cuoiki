@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
 
         //api url
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.100.7/")
+            .baseUrl("http://192.168.1.62/")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
         val apiProduct = retrofit.create(apiServiceProduct::class.java)
