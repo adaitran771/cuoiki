@@ -62,7 +62,7 @@ class DeliveredFragment : Fragment() {
                 .build()
             val retrofit = Retrofit.Builder()
                 .client(okHttpClient)
-                .baseUrl("http://192.168.1.3/")
+                .baseUrl("http://192.168.170.64/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
             apiOrder = retrofit.create(apiServiceOrder::class.java)

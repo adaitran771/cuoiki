@@ -10,4 +10,11 @@
     <string name="create_account">Create Account</string>
     <string name="create_an_account">Create an account</string>
     <string name="account">Account</string>
+    <string-array name="price_filter_options">
+        <item>Price</item>
+        <item>Under $25</item>
+        <item>$25 to $50</item>
+        <item>$50 to $100</item>
+        <item>Above $100</item>
+    </string-array>
 </resources>

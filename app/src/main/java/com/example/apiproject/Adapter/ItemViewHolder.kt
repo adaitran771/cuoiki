@@ -25,7 +25,7 @@ class ItemViewHolder(itemView: View,private val context: Context) : RecyclerView
         viewTextView.text = "Views: ${item.view}"
 
         Log.d("VariableType", item.price.javaClass.toString())
-        val url = "http://192.168.1.4/api/images/${item.img}"
+        val url = "http://192.168.170.64/api/images/${item.img}"
 
 
 

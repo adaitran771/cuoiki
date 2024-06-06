@@ -70,7 +70,7 @@ class detail_product : AppCompatActivity() {
         itemImg?.let {
 
 
-            Picasso.get().load("http://192.168.1.4/api/images/$it").fit().centerInside().into(productImg)
+            Picasso.get().load("http://192.168.170.64/api/images/$it").fit().centerInside().into(productImg)
 
         }
 

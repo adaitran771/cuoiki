@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -19,10 +18,21 @@
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/searchView"
-            android:layout_width="300dp"
+            android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:queryHint="Search products..." />
+
+        <!-- Spinner for price filter -->
+        <Spinner
+            android:id="@+id/price_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:entries="@array/price_filter_options"
+            android:spinnerMode="dropdown"
+            android:background="@android:drawable/btn_dropdown"
+            android:padding="10dp"/>
 
         <ImageView
             android:id="@+id/cart_icon"
@@ -31,6 +41,7 @@
             android:padding="10dp"
             android:src="@drawable/ic_shoping"
             android:contentDescription="Shopping Icon"/>
+
     </LinearLayout>
 
     <!-- RecycleView để hiển thị danh sách sản phẩm -->
@@ -40,9 +51,7 @@
         android:layout_height="0dp"
         android:layout_below="@id/search_bar"
         android:layout_above="@id/navigation_container"
-
-        android:background="#C8C7C7"
-        />
+        android:background="#C8C7C7" />
 
     <!-- Thanh navigation -->
     <FrameLayout

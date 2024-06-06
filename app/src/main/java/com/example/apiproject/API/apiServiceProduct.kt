@@ -1,8 +1,6 @@
 package com.example.apiproject.API
 
-import com.example.apiproject.user.User
 import retrofit2.Call
-import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Query
@@ -31,10 +29,14 @@ data class Item(
 
 interface apiServiceProduct {
     @Headers("Content-Type: application/json")
-
     @GET("api/products")
-    fun paging(@Query("page") page: Int) : Call<ProductResponse>
+    fun paging(@Query("page") page: Int): Call<ProductResponse>
+
     @Headers("Content-Type: application/json")
     @GET("api/products")
-    fun search(@Query("productName") productName: String) : Call<ProductResponse>
+    fun search(@Query("productName") productName: String): Call<ProductResponse>
+
+    @Headers("Content-Type: application/json")
+    @GET("api/products")
+    fun filterByPrice(@Query("minPrice") minPrice: Double?, @Query("maxPrice") maxPrice: Double?): Call<ProductResponse>
 }

@@ -52,7 +52,7 @@ class MyBottomSheetDialogFragment(private val product : Product)
         // Tải và hiển thị hình ảnh sản phẩm
         itemImg?.let {
 
-            Picasso.get().load("http://192.168.1.3/api/images/$it").fit().centerInside().into(productImg)
+            Picasso.get().load("http://192.168.170.64/api/images/$it").fit().centerInside().into(productImg)
         }
         productName.text = product.name
         productPrice.text = product.price.toString()

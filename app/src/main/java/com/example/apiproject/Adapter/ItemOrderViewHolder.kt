@@ -38,7 +38,7 @@ class ItemOrderViewHolder(itemView: View, private val context: Context) : Recycl
         quantityTextView.text = item.quantity
         sizeTextView.text = item.size
         colorTextView.text = item.color
-        val url = "http://192.168.1.4/api/images/${item.img}"
+        val url = "http://192.168.170.64/api/images/${item.img}"
         Picasso.get().load(url).fit().centerInside().into(imageView)
         clickOnItem(item)
         if(status != 1 ) {
