@@ -1,117 +1,166 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe_refresh_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5"
-    android:padding="16dp">
+    android:background="#FFFFFF">
 
-    <!-- Container for profile details -->
-
-    <!-- Container for buttons -->
-
-    <LinearLayout
-        android:id="@+id/profile_container"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/profile_background"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_height="match_parent">
 
-        <!-- Ảnh đại diện -->
-        <ImageView
-            android:id="@+id/profile_image"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_gravity="center"
-            android:background="@drawable/image_border"
-            android:padding="8dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_person" />
+        <!-- Header -->
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="420dp"
+            android:background="#FF9800"
+            android:padding="16dp">
 
-        <!-- Tên người dùng -->
-        <TextView
-            android:id="@+id/profile_name"
-            android:layout_width="wrap_content"
+            <!-- Profile Image -->
+            <ImageView
+                android:id="@+id/profile_image"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/image_border"
+                android:padding="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_person" />
+
+            <!-- Profile Name -->
+            <TextView
+                android:id="@+id/profile_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profile_image"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:text="Người dùng"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <!-- Profile Phone -->
+            <TextView
+                android:id="@+id/profile_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profile_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:text="Số điện thoại: 0123456789"
+                android:textColor="#555555"
+                android:textSize="18sp" />
+
+            <!-- Profile Email -->
+            <TextView
+                android:id="@+id/profile_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profile_phone"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:text="Email: example@gmail.com"
+                android:textColor="#555555"
+                android:textSize="18sp" />
+
+            <!-- Profile Address -->
+            <TextView
+                android:id="@+id/profile_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profile_email"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:text="Địa chỉ: 123 Đường ABC, Quận XYZ, Thành phố HCM"
+                android:textColor="#555555"
+                android:textSize="18sp" />
+
+            <!-- Edit Information Button -->
+            <Button
+                android:id="@+id/edit_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profile_address"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="24dp"
+                android:text="CHỈNH SỬA THÔNG TIN"
+                android:textColor="#000000" />
+        </RelativeLayout>
+
+        <!-- Navigation Menu -->
+        <LinearLayout
+            android:id="@+id/navigation_layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:text="Người dùng"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:layout_below="@id/header"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-        <!-- Số điện thoại -->
-        <TextView
-            android:id="@+id/profile_phone"
-            android:layout_width="wrap_content"
+            <!-- Home Button -->
+            <Button
+                android:id="@+id/home_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TRANG CHỦ"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:drawableStart="@drawable/baseline_home_24"
+                android:drawablePadding="16dp"
+                android:padding="16dp"
+                android:background="?android:attr/selectableItemBackground" />
+
+            <!-- Orders Button -->
+            <Button
+                android:id="@+id/orders_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ĐƠN HÀNG"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:drawableStart="@drawable/ic_shoping"
+                android:drawablePadding="16dp"
+                android:padding="16dp"
+                android:background="?android:attr/selectableItemBackground" />
+        </LinearLayout>
+
+        <!-- Action Buttons at Bottom -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="8dp"
-            android:text="Số điện thoại: 0123456789"
-            android:textColor="#555555"
-            android:textSize="18sp" />
+            android:orientation="horizontal"
+            android:layout_below="@id/navigation_layout"
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+            android:weightSum="2"
+            android:padding="16dp"
+            android:background="@drawable/button_background">
 
-        <!-- Email -->
-        <TextView
-            android:id="@+id/profile_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="8dp"
-            android:text="Email: example@gmail.com"
-            android:textColor="#555555"
-            android:textSize="18sp" />
+            <!-- Button "Chỉnh sửa" -->
+            <Button
+                android:id="@+id/edit_profile_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:padding="12dp"
+                android:text="Chỉnh sửa"
+                android:textColor="@color/colorPrimary" />
 
-        <!-- Địa chỉ -->
-        <TextView
-            android:id="@+id/profile_address"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="8dp"
-            android:text="Địa chỉ: 123 Đường ABC, Quận XYZ, Thành phố HCM"
-            android:textColor="#555555"
-            android:textSize="18sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@id/profile_container"
-        android:layout_marginTop="32dp"
-        android:gravity="center"
-        android:weightSum="2"
-        android:padding="16dp"
-        android:background="@drawable/button_background">
-
-        <!-- Button "Chỉnh sửa" -->
-        <Button
-            android:id="@+id/edit_profile_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackground"
-            android:padding="12dp"
-            android:text="Chỉnh sửa"
-            android:textColor="@color/colorPrimary" />
-
-        <!-- Button "Đăng xuất" -->
-        <Button
-            android:id="@+id/logout_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Đăng xuất"
-            android:background="?attr/selectableItemBackground"
-            android:textColor="@color/colorAccent"
-            android:padding="12dp"/>
-    </LinearLayout>
-
-    <FrameLayout
-        android:id="@+id/navigation_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"/>
-
-</RelativeLayout>
+            <!-- Button "Đăng xuất" -->
+            <Button
+                android:id="@+id/logout_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#F44336"
+                android:text="ĐĂNG XUẤT"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:padding="16dp" />
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
