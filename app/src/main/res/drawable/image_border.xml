@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Đặt màu nền cho ảnh đại diện -->
+    <solid android:color="@android:color/white"/>
+
+    <!-- Định nghĩa các góc bo tròn -->
+    <corners android:radius="16dp"/>
+
+    <!-- Định nghĩa đường viền -->
+    <stroke
+        android:width="4dp"
+        android:color="#DDDDDD"/>
+</shape>

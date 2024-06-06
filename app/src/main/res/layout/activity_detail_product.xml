@@ -40,6 +40,7 @@
                     android:textColor="@color/colorBackground"
                     android:layout_marginRight="3dp" />
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnBuy"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
                     android:layout_height="50dp"
@@ -104,6 +105,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.2"
+
+
                     android:text="name"
                     android:textAlignment="center" />
             </LinearLayout>

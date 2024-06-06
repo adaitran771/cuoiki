@@ -1,168 +1,117 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".profile">
+    android:background="#F5F5F5"
+    android:padding="16dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/view_block"
+    <!-- Container for profile details -->
+
+    <!-- Container for buttons -->
+
+    <LinearLayout
+        android:id="@+id/profile_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:background="@drawable/profile_background"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <View
-            android:id="@+id/registrationView"
-            android:layout_width="0dp"
-            android:layout_height="175dp"
-            android:background="@color/colorPrimary"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
+        <!-- Ảnh đại diện -->
         <ImageView
             android:id="@+id/profile_image"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="12dp"
-            android:src="@drawable/ic_baseline_person_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:background="@drawable/image_border"
+            android:padding="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_person" />
 
+        <!-- Tên người dùng -->
         <TextView
-            android:id="@+id/username"
+            android:id="@+id/profile_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="64dp"
-            android:text="Tên người dùng"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="Người dùng"
+            android:textColor="#000000"
             android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="@id/profile_image"
-            app:layout_constraintStart_toEndOf="@id/profile_image"
-            app:layout_constraintTop_toTopOf="@id/profile_image"
-            app:layout_constraintVertical_bias="1.0" />
+            android:textStyle="bold" />
 
+        <!-- Số điện thoại -->
         <TextView
-            android:id="@+id/email"
+            android:id="@+id/profile_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="Email"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="@id/profile_image"
-            app:layout_constraintStart_toEndOf="@id/profile_image"
-            app:layout_constraintTop_toTopOf="@id/profile_image"
-            app:layout_constraintVertical_bias="0.691" />
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:text="Số điện thoại: 0123456789"
+            android:textColor="#555555"
+            android:textSize="18sp" />
 
-        <Button
-            android:id="@+id/edit_infor"
-            android:layout_width="200dp"
+        <!-- Email -->
+        <TextView
+            android:id="@+id/profile_email"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:padding="12dp"
-            android:text="Chỉnh sửa thông tin"
-            android:textColor="@android:color/black"
-            app:layout_constraintDimensionRatio="3:1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/profile_image" />
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:text="Email: example@gmail.com"
+            android:textColor="#555555"
+            android:textSize="18sp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Địa chỉ -->
+        <TextView
+            android:id="@+id/profile_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:text="Địa chỉ: 123 Đường ABC, Quận XYZ, Thành phố HCM"
+            android:textColor="#555555"
+            android:textSize="18sp" />
+    </LinearLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/button_block"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/logout_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view_block">
-
-        <!-- First row: Home button and icon -->
-        <ImageView
-            android:id="@+id/nav_home"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:contentDescription="Home Icon"
-            android:src="@drawable/baseline_home_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="@+id/index"
-            app:layout_constraintVertical_bias="0.5"
-            android:layout_marginStart="8dp"/>
-
-        <!-- Divider between Home and Order History buttons -->
-        <Button
-            android:id="@+id/index"
-            android:layout_width="345dp"
-            android:layout_height="59dp"
-            android:layout_marginStart="8dp"
-            android:background="@android:color/transparent"
-            android:padding="12dp"
-            android:text="Trang chủ"
-            android:textColor="@android:color/black"
-            app:layout_constraintBottom_toBottomOf="@id/nav_home"
-            app:layout_constraintStart_toEndOf="@id/nav_home"
-            app:layout_constraintTop_toTopOf="@id/nav_home" />
-
-        <View
-            android:id="@+id/divider_view"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/divider_color"
-            app:layout_constraintTop_toBottomOf="@id/index"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/cart_icon"/>
-
-        <!-- Second row: Shopping icon and Order history button -->
-        <ImageView
-            android:id="@+id/cart_icon"
-            android:layout_width="44dp"
-            android:layout_height="52dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="8dp"
-            android:contentDescription="Shopping Icon"
-            android:src="@drawable/ic_shoping"
-            app:layout_constraintBottom_toBottomOf="@+id/order_history_button"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider_view"
-            app:layout_constraintVertical_bias="0.5" />
-
-        <Button
-            android:id="@+id/order_history_button"
-            android:layout_width="346dp"
-            android:layout_height="65dp"
-            android:layout_marginStart="12dp"
-            android:background="@android:color/transparent"
-            android:padding="12dp"
-            android:text="Đơn hàng"
-            android:textColor="@android:color/black"
-            app:layout_constraintBottom_toBottomOf="@id/cart_icon"
-            app:layout_constraintStart_toEndOf="@id/cart_icon"
-            app:layout_constraintTop_toBottomOf="@+id/index"
-            app:layout_constraintVertical_bias="1.0" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/logout_button"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#F12323"
-        android:text="Đăng xuất"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_block" />
+        android:orientation="horizontal"
+        android:layout_below="@id/profile_container"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:weightSum="2"
+        android:padding="16dp"
+        android:background="@drawable/button_background">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Button "Chỉnh sửa" -->
+        <Button
+            android:id="@+id/edit_profile_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:padding="12dp"
+            android:text="Chỉnh sửa"
+            android:textColor="@color/colorPrimary" />
+
+        <!-- Button "Đăng xuất" -->
+        <Button
+            android:id="@+id/logout_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Đăng xuất"
+            android:background="?attr/selectableItemBackground"
+            android:textColor="@color/colorAccent"
+            android:padding="12dp"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/navigation_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

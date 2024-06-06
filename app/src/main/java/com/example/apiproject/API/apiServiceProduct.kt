@@ -12,10 +12,7 @@ data class ProductResponse(
 )
 
 data class ResponseDataProduct(
-    val status: Int,
-    val nextPage: Int?,
-    val prevPage: Int?,
-    val totalCount: Int,
+    val status: String,
     val data: List<Item>
 )
 

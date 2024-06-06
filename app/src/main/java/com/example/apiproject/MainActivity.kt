@@ -2,6 +2,7 @@ package com.example.apiproject
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
@@ -61,7 +62,7 @@ class MainActivity : AppCompatActivity() {
 
         //api url
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.1.4/")
+            .baseUrl("http://192.168.1.3/")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
         val apiProduct = retrofit.create(apiServiceProduct::class.java)
@@ -167,6 +168,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<ProductResponse>, t: Throwable) {
                 Toast.makeText(this@MainActivity,"Failed", Toast.LENGTH_SHORT).show()
+                Log.d("Failed","${t.message}")
             }
 
         })

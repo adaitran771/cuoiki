@@ -1,5 +1,7 @@
 package com.example.apiproject.API
+import com.example.apiproject.order.Order
 import com.example.apiproject.user.User
+import com.example.apiproject.user.UserRegister
 import retrofit2.http.Body
 import retrofit2.Call
 import retrofit2.http.Headers
@@ -16,12 +18,21 @@ data class ResponseData(
 data class JwtData(
     val jwt: String,
     val message: String,
-    val user: User
+    val user: User,
+    val orders: List<Order>
+
 )
+
+
+
 
 interface apiServiceUser {
     @Headers("Accept: application/json")
 
     @POST("api/users/login")
     fun login(@Body user: User) : Call<serverResponse>
+    @Headers("Accept: application/json")
+    @POST("api/users/register")
+    fun register(@Body user: UserRegister) : Call<serverResponse>
 }
+

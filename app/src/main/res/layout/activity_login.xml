@@ -23,7 +23,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:padding="5dp"
-        android:text="@string/welcome"
+        android:text="welcome"
         android:textColor="@android:color/white"
         android:textSize="36sp"
         android:textStyle="bold"
@@ -39,7 +39,7 @@
         android:layout_marginTop="0dp"
         android:padding="5dp"
         android:textStyle="bold"
-        android:text="@string/sign_in_to_get_started"
+        android:text="sign_in_to_get_started"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/view"
@@ -48,23 +48,23 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tl_email"
+        android:id="@+id/userLayout"
         style="@style/LoginTextInputLayoutStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
-        android:hint="@string/email"
+        android:hint="Username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view"
-        app:startIconDrawable="@drawable/ic_baseline_email_24"
+        app:startIconDrawable="@drawable/ic_person"
         app:startIconTint="@android:color/darker_gray">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_email"
+            android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="textEmailAddress" />
@@ -81,7 +81,7 @@
         android:hint="@string/password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tl_email"
+        app:layout_constraintTop_toBottomOf="@+id/userLayout"
         app:startIconDrawable="@drawable/ic_baseline_lock_24"
         app:startIconTint="@android:color/darker_gray">
 
@@ -101,7 +101,7 @@
         android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
         android:padding="10dp"
-        android:text="@string/forgot_password"
+        android:text="forgot_password?"
         android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tl_password" />

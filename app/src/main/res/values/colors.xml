@@ -13,6 +13,11 @@
     <color name="colorText">#212121</color>
     <color name="colorAccent">#FF4081</color>
     <color name="divider_color">#E0E0E0</color>
+    <!-- Màu cho nút khi được nhấn -->
+    <color name="colorButtonPressed">#FF5722</color> <!-- Ví dụ: Màu cam -->
+
+    <!-- Màu cho nút khi không được nhấn -->
+    <color name="colorButtonNormal">#2196F3</color> <!-- Ví dụ: Màu xanh -->
 
 
 </resources>

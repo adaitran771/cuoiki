@@ -2,6 +2,7 @@ package com.example.apiproject.Adapter
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -22,7 +23,8 @@ class ItemViewHolder(itemView: View,private val context: Context) : RecyclerView
         nameTextView.text = item.name
         priceTextView.text = "Price: ${item.price}"
         viewTextView.text = "Views: ${item.view}"
-        val url = "http://192.168.1.5/api/images/${item.img}"
+        Log.d("VariableType", item.price.javaClass.toString())
+        val url = "http://192.168.1.4/api/images/${item.img}"
         Picasso.get().load(url).fit().centerInside().into(imageView)
         clickOnItem(item)
     }
@@ -33,7 +35,7 @@ class ItemViewHolder(itemView: View,private val context: Context) : RecyclerView
             intent.putExtra("view", item.view)
             intent.putExtra("img", item.img)
             intent.putExtra("name", item.name)
-            intent.putExtra("price", item.price)
+            intent.putExtra("price", item.price.toFloat())
             intent.putExtra("des", item.des)
             intent.putExtra("size", item.size)
             intent.putExtra("color", item.color)
